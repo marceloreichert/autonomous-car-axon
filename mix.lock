@@ -1,0 +1,13 @@
+%{
+  "array_vector": {:hex, :array_vector, "0.3.0", "3afc0abb82a2e0bfe0ffe54948b78163a4aae013818f86f343e9de85b9d479ca", [:mix], [], "hexpm", "743a15b97df26fe83a11f093d8a3b9308c2a13e2f286e537d37c978269a3a2a2"},
+  "axon": {:git, "https://github.com/elixir-nx/axon.git", "e450f32416179baf818c2948e082932b475d8ed9", [branch: "main"]},
+  "elixir_make": {:hex, :elixir_make, "0.6.0", "38349f3e29aff4864352084fc736fa7fa0f2995a819a737554f7ebd28b85aaab", [:mix], [], "hexpm", "d522695b93b7f0b4c0fcb2dfe73a6b905b1c301226a5a55cb42e5b14d509e050"},
+  "exla": {:git, "https://github.com/elixir-nx/nx.git", "70522417c71425d4871090114481d1b9effbdfef", [sparse: "exla"]},
+  "font_metrics": {:hex, :font_metrics, "0.3.1", "025ff9957040eb4d6430c306a4445bad5d9f43ec24448c1647df7cb63b5dd88c", [:mix], [{:msgpax, "~> 2.2", [hex: :msgpax, repo: "hexpm", optional: false]}], "hexpm", "6dff6525d49d84173ce20b4cba2457b2289e83bcc2be19c2aa761dbe9f631033"},
+  "math": {:hex, :math, "0.3.0", "e14e7291115201cb155a3567e66d196bf5088a6f55b030d598107d7ae934a11c", [:mix], [], "hexpm", "5f2a14eeb8ed70b14c2dcd7c09e7e7b61aaa856d1fc0f07f53bf0f3586c561c1"},
+  "msgpax": {:hex, :msgpax, "2.2.3", "02be0be1b440a12d7e6f6c45662463d53d01a30b5bd4ab806276453b455f820a", [:mix], [{:plug, "~> 1.0", [hex: :plug, repo: "hexpm", optional: true]}], "hexpm", "0b45d5d37426699cf089d65ba4aed2ed838e3981a4537e339e685e2cb462a536"},
+  "nx": {:git, "https://github.com/elixir-nx/nx.git", "bb6f2a811882921de684833e64154bc8084bd792", [branch: "main", sparse: "nx"]},
+  "scenic": {:hex, :scenic, "0.10.2", "f4f0a00eed677ac50a7b297375c0323d03f4273580f17c50b877abfaf0c6dc1f", [:make, :mix], [{:elixir_make, "~> 0.5", [hex: :elixir_make, repo: "hexpm", optional: false]}, {:font_metrics, "~> 0.3", [hex: :font_metrics, repo: "hexpm", optional: false]}], "hexpm", "6f1445a77b9ad6bac73ef0677a6c133685042eb69cc666b1516a0a037a76e8f4"},
+  "scenic_driver_glfw": {:hex, :scenic_driver_glfw, "0.10.0", "01a00c8da910c56ef908bf886826a5a28989a3919b6e63b982e66ba226d3bf9d", [:make, :mix], [{:elixir_make, "~> 0.5", [hex: :elixir_make, repo: "hexpm", optional: false]}, {:scenic, "~> 0.10", [hex: :scenic, repo: "hexpm", optional: false]}], "hexpm", "bcb140c5de6ba11f293c7917708c753f556fd764e10cc5bc0bc08de9deb967d9"},
+  "table_rex": {:hex, :table_rex, "3.1.1", "0c67164d1714b5e806d5067c1e96ff098ba7ae79413cc075973e17c38a587caa", [:mix], [], "hexpm", "678a23aba4d670419c23c17790f9dcd635a4a89022040df7d5d772cb21012490"},
+}
