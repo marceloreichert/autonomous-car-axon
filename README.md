@@ -1,4 +1,9 @@
-Readme text goes here
+# Autonomous Car
 
+Using:
+- [Elixir](https://elixir-lang.org/)
+- [Nx](https://github.com/elixir-nx/nx)
+- [Axon](https://github.com/elixir-nx/axon)
+- [Scenic](https://github.com/boydm/scenic)
 
-From template
+`mix scenic.run`
