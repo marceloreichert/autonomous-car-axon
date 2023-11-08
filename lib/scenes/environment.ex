@@ -14,17 +14,17 @@ defmodule AutonomousCar.Scene.Environment do
   @batch_size 150
 
   # Initial parameters for the game scene!
-  def init(_arg, opts) do
-    viewport = opts[:viewport]
+  def init(scene, _args, options) do
+    viewport = options[:viewport]
 
     # Initializes the graph
     graph = Graph.build(theme: :dark)
 
     # Calculate the transform that centers the car in the viewport
-    {:ok, %ViewPort.Status{size: {viewport_width, viewport_height}}} = ViewPort.info(viewport)
+    {:ok, %ViewPort{size: {viewport_width, viewport_height}}} = ViewPort.info(viewport)
 
     # start a very simple animation timer
-    {:ok, timer} = :timer.send_interval(60, :frame)
+    # {:ok, timer} = :timer.send_interval(60, :frame)
 
     # Start neural network
     {:ok, model_pid} = Model.start_link()
@@ -77,12 +77,15 @@ defmodule AutonomousCar.Scene.Environment do
       |> draw_objects(state.objects)
       |> draw_vector(car_coords, goal_coords, :blue)
 
-    state = put_in(state, [:graph], graph)
+    scene =
+      scene
+      |> assign( state: state, graph: graph )
+      |> push_graph( graph )
 
     IO.puts("\n")
     IO.puts("--STARTED--")
 
-    {:ok, state, push: graph}
+    {:ok, scene}
   end
 
   def handle_info(:frame, %{frame_count: frame_count} = state) do
@@ -113,7 +116,7 @@ defmodule AutonomousCar.Scene.Environment do
     orientation_rad = Math.acos(orientation)
     orientation_grad = (180 / :math.pi) * orientation_rad
 
-    distance = Scenic.Math.Vector2.distance(car_coords, {20,20})
+    _distance = Scenic.Math.Vector2.distance(car_coords, {20,20})
 
     signals =
       cond do
@@ -146,12 +149,12 @@ defmodule AutonomousCar.Scene.Environment do
     prob_actions =
       case state.model_fit do
         true ->
-          if Nx.random_uniform(1) |> Nx.to_scalar <= 0.3 do
+          if :rand.uniform() <= 0.3 do
             Axon.predict(Model.model, Model.pull(state.model_pid), Nx.tensor(state_final))
           else
-            get_random_values
+            get_random_values()
           end
-        _ -> get_random_values
+        _ -> get_random_values()
       end
 
     IO.inspect(prob_actions, label: "Probs -> ")

@@ -23,11 +23,11 @@ defmodule AutonomousCar.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:scenic, "~> 0.10"},
-      {:scenic_driver_glfw, "~> 0.10"},
-      {:math, "~> 0.3.0"},
-      {:nx, "~> 0.1.0-dev", github: "elixir-nx/nx", branch: "main", sparse: "nx", override: true},
-      {:axon, "~> 0.1.0-dev", github: "elixir-nx/axon", branch: "main"}
+      {:scenic, "~> 0.11.2"},
+      {:scenic_driver_local, "~> 0.11.0"},
+      {:math, "~> 0.7.0"},
+      {:nx, "~> 0.6.2"},
+      {:axon, "~> 0.6.0"}
     ]
   end
 end
